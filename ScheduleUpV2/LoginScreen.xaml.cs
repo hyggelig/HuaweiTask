@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScheduleUp.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,39 @@ namespace ScheduleUpV2
         public LoginScreen()
         {
             InitializeComponent();
+        }
+
+        private void login_button_Click(object sender, RoutedEventArgs e)
+        {
+            var user_name = userNameBox.Text;
+            var password = passwordBox.Password;
+
+            using (var context = new ScheduleUpDBEntities())
+            {
+                var foundUser = context.UserTable.Where(x => x.userName == user_name && x.password == password).ToList();
+
+                if(foundUser.Count == 1)
+                {
+                    
+                    MainWindow mainWindow = new MainWindow(foundUser.FirstOrDefault());
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Username or password is wrong but i can't tall which one.", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+        }
+
+        private void usernameFocusEvent(object sender, RoutedEventArgs e)
+        {
+            userNameBox.Text = "";
+        }
+        private void register_button_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterScreen regScreen = new RegisterScreen();
+            regScreen.Show();
+            this.Close();
         }
     }
 }

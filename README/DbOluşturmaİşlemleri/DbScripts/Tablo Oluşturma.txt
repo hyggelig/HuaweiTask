@@ -1,0 +1,37 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TaskTable](
+	[TaskID] [uniqueidentifier] NOT NULL,
+	[TaskTitle] [nvarchar](100) NOT NULL,
+	[TaskContent] [nvarchar](max) NULL,
+	[TaskStartDate] [datetime] NULL,
+	[TaskEndDate] [datetime] NULL,
+	[TaskCreator] [nvarchar](100) NOT NULL,
+	[TaskAssignedTo] [nvarchar](100) NULL,
+	[TaskStatu] [varchar](20) NULL,
+ CONSTRAINT [PK_TaskTable] PRIMARY KEY CLUSTERED 
+(
+	[TaskID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserTable]    Script Date: 20.10.2019 20:01:40 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserTable](
+	[userID] [uniqueidentifier] NOT NULL,
+	[userName] [nvarchar](50) NOT NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[surname] [nvarchar](50) NOT NULL,
+	[email] [nvarchar](50) NULL,
+	[password] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_UserTable] PRIMARY KEY CLUSTERED 
+(
+	[userID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO

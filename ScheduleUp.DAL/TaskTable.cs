@@ -21,5 +21,6 @@ namespace ScheduleUp.DAL
         public Nullable<System.DateTime> TaskEndDate { get; set; }
         public string TaskCreator { get; set; }
         public string TaskAssignedTo { get; set; }
+        public string TaskStatu { get; set; }
     }
 }
