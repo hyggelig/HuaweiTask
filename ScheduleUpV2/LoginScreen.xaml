@@ -1,0 +1,16 @@
+﻿<Window x:Class="ScheduleUpV2.LoginScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HuaweiTaskV1"
+        mc:Ignorable="d"
+        Title="LoginScreen" Height="220.551" Width="270">
+    <Grid Margin="0,0,0,5">
+        <TextBox x:Name="userNameBox" HorizontalAlignment="Left" Height="23" Margin="43,17,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="178"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Height="23" Margin="43,47,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="27,82,0,0" VerticalAlignment="Top" Width="205" Click="login_button_Click" Height="22"/>
+        <Label x:Name="label" Content="New to Todo List? Create a new account." HorizontalAlignment="Left" FontSize="9" Margin="49,128,0,0" VerticalAlignment="Top" Width="175" Height="25"/>
+        <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Left" Margin="20,153,0,0" VerticalAlignment="Top" Width="220" Click="register_button_Click"/>
+    </Grid>
+</Window>
